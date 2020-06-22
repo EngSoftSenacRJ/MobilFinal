@@ -16,7 +16,7 @@ import { AgmCoreModule } from '@agm/core';
     IonicModule,
     PesquisaPageRoutingModule,
     AgmCoreModule.forRoot({
-      apiKey: 'AIzaSyBsP7z9rHwL7w5oGSb0tfuUtbo25MC5Bxs'
+      apiKey: 'JA DISSE VAI PROCURA A SUA'
     })
   ],
   declarations: [PesquisaPage]
