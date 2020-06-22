@@ -1,0 +1,69 @@
+<ion-content [fullscreen]="true">
+
+
+  <div id="container">
+
+    <!-- campo categoria-->
+    <ion-item>
+      <ion-label>Categoria</ion-label>
+      <ion-select [(ngModel)]="categoria" ok-text="Ok" cancel-text="Cancelar">
+
+        <ion-select-option *ngFor="let categoria of categorias" [value]="categoria">
+          {{categoria.nome}}
+        </ion-select-option>
+
+      </ion-select>
+    </ion-item>
+
+
+    <ion-item>
+      <ion-label>Marca</ion-label>
+      <ion-select [(ngModel)]="marca" ok-text="Ok" cancel-text="Cancelar">
+
+        <ion-select-option *ngFor="let marca of marcas" [value]="marca">
+          {{marca.nome}}
+        </ion-select-option>
+
+      </ion-select>
+    </ion-item>
+
+
+    <ion-item>
+      <ion-label position="floating">Produto</ion-label>
+      <ion-input [(ngModel)]="produtoPesquisado"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Distancia(KM)</ion-label>
+      <ion-select [(ngModel)]="distancia" ok-text="Ok" cancel-text="Cancelar">
+        <ion-select-option value="1">1</ion-select-option>
+        <ion-select-option value="3">3</ion-select-option>
+        <ion-select-option value="5">5</ion-select-option>
+        <ion-select-option value="10">10</ion-select-option>
+        <ion-select-option value="20">20</ion-select-option>
+        <ion-select-option value="30">30</ion-select-option>
+        <ion-select-option value="40">40</ion-select-option>
+        <ion-select-option value="50">50</ion-select-option>
+        <ion-select-option value="60">60</ion-select-option>
+        <ion-select-option value="70">70</ion-select-option>
+      </ion-select>
+    </ion-item>
+
+
+    <div class="btn">
+      <ion-button (click)="pesquisar()" type="submit" color="white" expand="block">
+        Pesquisar
+      </ion-button>
+    </div>
+    <!---->
+    <agm-map *ngIf="dadosLojas.length > 0" [latitude]="latitude" [zoom]="zoom" [longitude]="longitude">
+
+      <agm-marker *ngFor="let o of dadosLojas;" [latitude]="o.latitude" [longitude]="o.longitude"></agm-marker>
+
+
+    </agm-map>
+
+  </div>
+
+
+</ion-content>

@@ -1,0 +1,7 @@
+{
+    "server": "IP DO SERVIDOR",
+    "port": 3306,
+    "user": "USUARIO ",
+    "pass": "SENHA",
+    "database":"BANCO"
+}
